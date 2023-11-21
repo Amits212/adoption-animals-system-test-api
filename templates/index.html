@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+{%block title%}Index{%endblock%}
+{% block content %}
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+<h2 class="mb-12 text-2xl text-center">All animals</h2>
+    <div class="grid grid-cols-3 gap-3">
+        {%for animal in animals%}
+        <div>
+            <a href="/animal/{{animal.name}}">
+                <div class="transition duration-500 hover:scale-125 hover:bg-white-600 flex justify-center items-center rounded-xl">
+                  <img class="rounded-xl" src="{{url_for('static', path=animal['image'])}}">
+                </div>
+                <div class="p-6 bg-white rounded-b-xl">
+                    <h2 class="text-2xl">{{animal.name}}</h2>
+                </div>
+            </a>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

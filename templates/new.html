@@ -1,0 +1,20 @@
+<!-- new.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}New animal{% endblock %}
+
+{% block content %}
+<form action="/new" method="POST">
+    <h3>Name:</h3>
+    <p><input type='text' name='name'/></p>
+    <h3>Age:</h3>
+    <p><input type="number" name='age'/></p>
+    <h3>Description</h3>
+    <p><input type='text' name="description"/></p>
+    <h3>Image:</h3>
+    <p><input type='file' name="image"/></p>
+    <br>
+    <input type="submit" value="submit">
+</form>
+{% endblock %}

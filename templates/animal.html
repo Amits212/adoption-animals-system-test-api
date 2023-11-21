@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block title%}{{animal.name}}{%endblock%}
+
+{%block content%}
+<h1><b>Details:</b></h1>
+<b>Name:</b>{{animal.name}}
+<br>
+<b>Description:</b>{{animal.description}}
+<br>
+<div class="items-center rounded-xl">
+    <img src="{{url_for('static', path=animal['image'])}}" width="400" height="200">
+</div>
+{%endblock%}
